@@ -110,6 +110,7 @@ class QdrantConnector:
         search_results = await self._client.search(
             collection_name=self._collection_name,
             query_vector=models.NamedVector(name=vector_name, vector=query_vector),
+            score_threshold=0.8,
             limit=10,
         )
 
